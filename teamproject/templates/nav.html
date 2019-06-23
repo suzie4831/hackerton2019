@@ -1,8 +1,348 @@
+<head>
+        <style>
+            *{margin:0;padding:0;
+            font-family:"Noto Sans KR";}
+            .english{
+                font-family:"Permanent Marker";
+            }
+/*공통*/
+            /*헤더*/
+                header{
+                    margin: 20px auto 10px auto;
+                    height: 30px;
+                    width: 1000px;
+                    border: #B4B4B4 solid 3px;
+                    padding:5px;
+                }
+                .nav_home{
+                    position: relative;
+                    top:-5px;
+                    margin-left:10px;
+                    text-decoration: none;
+                    font-size:1.5em;
+                }
+                .nav_day{
+                    position: relative;
+                    top:-3px;
+                    display: inline-block;
+                    float: right;
+                    margin-right: 10px;
+                    text-decoration: none;
+                }
+
+                .day_name{
+                    display:inline-block;
+                }
+                .day_time{
+                    display:inline-block;
+                }
+
+            /*푸터*/
+                footer{
+                    margin: 10px auto;
+                    height: 30px;
+                    width: 1000px;
+                    border: #B4B4B4 solid 3px;
+                    text-align: center;
+                    padding:5px;
+                }
+
+/*홈페이지*/
+                .contents{
+                    margin:auto;
+                    width: 1000px;
+                }
+
+                .left{
+                    display:inline-block;
+                    position: relative;
+                    top:0px;
+                    width:270px;
+                    height:100%;
+                }
+                .right{
+                    display: inline-block;
+                    position: relative;
+                    width: 700px;
+                    height:100%;
+                }
+            
+            /*프로필*/
+                .profile{
+                    border: #C4CE91 solid 3px;
+                    width: 250px;
+                    height: 80px;
+                    margin: 5px;
+                    color:#9DA674;
+                }
+                .head{
+                    width:55px;
+                    margin: 15px;
+                    position:absolute;
+                }
+                .profile_ex{
+                    position:absolute;
+                    margin: 15px 0px 0px 90px;
+                }
+            
+            /*달력*/
+                .calendar{
+                    width: 250px;
+                    margin: 5px;
+                    color:#77A6A1;
+                }
+                .dues{
+                    border: #9CD9D3 solid 3px;
+                    display: inline-block;
+                    width: 250px;
+                    height: 41px;
+                    position:relative;
+                }
+                .due_date{
+                    color:white;
+                    background-color:#9CD9D3;
+                    position:absolute;
+                    padding: 10px; margin:0px;
+                    font-size: 1em; 
+                }
+                .due_ex{
+                    positon: absolute;
+                    height: 50px;
+                    width: 100px;
+                    top:0; 
+                    margin:2px 0px 0px 65px;
+                    font-size: 0.8em;
+                    padding: auto;
+                }
+                .calendar_link{
+                    border: #9CD9D3 solid 3px;
+                    color:#77A6A1;
+                    background-color: white;
+                    width: 256px;
+                    margin-top: 5px;
+                    padding: 7px;
+                }
+                .calendar_link:hover{
+                    background-color:#9CD9D3;
+                    color: white;
+                }
+    
+            /*팀플*/
+                .team{
+                    color:#7983A6;
+                }
+                .team_new{
+                    color:#7983A6;
+                    border:#9AA7D2 solid 3px;
+                    background-color: white;
+                    width: 700px;
+                    height:50px;
+                    padding: 7px;
+                    margin-bottom:5px;
+                }
+                .team_new:hover{
+                    background-color:#9AA7D2;
+                    color: white;
+                }
+                .team_list{
+                    color:#7983A6;
+                    border:#9AA7D2 solid 3px;
+                    background-color: white;
+                    width: 700px;
+                    height:50px;
+                    padding: 7px;
+                    margin-bottom:5px;
+                    text-decoration:none;
+                }
+                .team_list:hover{
+                    background-color:#9AA7D2;
+                    color: white;
+                }
+        </style>
+        <style>
+        @media (max-width: 600px){
+            *{margin:0;padding:0;
+            font-family:"Noto Sans KR";}
+            .english{
+                font-family:"Permanent Marker";}
+            .container{
+                margin-top:70px;
+            }
+
+/*공통*/
+            /*헤더*/
+                header{
+                    margin: 10px;
+                    height: 30px;
+                    width: 95%;
+                    border: #B4B4B4 solid 3px;
+                    margin:5px;
+                }
+                .nav_home{
+                    position: relative;
+                    top:-5px;
+                    margin-left:10px;
+                    text-decoration: none;
+                    font-size:1.5em;
+                }
+                .nav_day{
+                    display: block;
+                    position: absolute;
+                    margin-left:20%;margin-right:20%;
+                    margin-top: 58px;
+                    text-align:center;
+                }
+                .day_name{
+                    display:block;
+                }
+                .day_time{
+                    display:block;
+                }
+
+            /*푸터*/
+                footer{
+                    margin: 10px;
+                    height: 30px;
+                    width: 95%;
+                    border: #B4B4B4 solid 3px;
+                    margin:5px;
+                }
+
+/*홈페이지*/
+                .contents{
+                    margin:auto;
+                    width: 98%;
+                    position: static;
+                    top:40px;
+                }
+
+                .left{
+                    display:block;
+                    position: static;
+                    width:98%;
+                    height:200px;
+                }
+                .right{
+                    display: block;
+                    position: static;
+                    width:98%;
+                }
+            
+            /*프로필*/
+                .profile{
+                    border: #C4CE91 solid 3px;
+                    width: 98%;
+                    height: 80px;
+                    margin: 70px 5px 5px 5px;
+                    color:#9DA674;
+                }
+                .head{
+                    width:55px;
+                    margin: 15px;
+                    position:absolute;
+                }
+                .profile_ex{
+                    width: 200px;
+                    text-decoration:none;
+                    float:center;
+                }
+            
+            /*달력*/
+                .calendar{
+                    width: 98%;
+                    margin: 5px;
+                    color:#77A6A1;
+                }
+                .dues{
+                    border: #9CD9D3 solid 3px;
+                    display: inline-block;
+                    width: 98%;
+                    height: 41px;
+                    position:relative;
+                }
+                .due_date{
+                    color:white;
+                    background-color:#9CD9D3;
+                    position:absolute;
+                    padding: 10px; margin:0px;
+                    font-size: 1em; 
+                }
+                .due_ex{
+                    positon: absolute;
+                    height: 50px;
+                    top:0; 
+                    margin:2px 0px 0px 65px;
+                    font-size: 0.8em;
+                    padding: auto;
+                }
+                .calendar_link{
+                    border: #9CD9D3 solid 3px;
+                    color:#77A6A1;
+                    background-color: white;
+                    width: 98%;
+                    margin-top: 5px;
+                    padding: 7px;
+                }
+                .calendar_link:hover{
+                    background-color:#9CD9D3;
+                    color: white;
+                }
+    
+            /*팀플*/
+                .team{
+                    color:#7983A6;
+                }
+                .team_new{
+                    color:#7983A6;
+                    border:#9AA7D2 solid 3px;
+                    background-color: white;
+                    width: 98%;
+                    height:50px;
+                    padding: 7px;
+                }
+                .team_new:hover{
+                    background-color:#9AA7D2;
+                    color: white;
+                }
+                .team_list{
+                    color:#7983A6;
+                    border:#9AA7D2 solid 3px;
+                    background-color: white;
+                    width: 98%;
+                    height:50px;
+                    padding: 7px;
+                    margin-bottom:5px;
+                    text-decoration:none;
+                }
+                .team_list:hover{
+                    background-color:#9AA7D2;
+                    color: white;
+                }
+        }
+        </style>
+</head>
+
 <!--공통 헤더-->
 <title>팀플 서바이벌</title>
-
-<a href="{% url 'home' %}">팀플 서바이벌</a>
-<div>D-day</div>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Permanent+Marker&display=swap" rel="stylesheet">
+<header>
+    <a href="{% url 'home' %}" class="nav_home">
+        <span style="color:#707070;font-family:Permanent Marker;">T</span>
+        <span style="color:#C4CE91;font-family:Permanent Marker;">E</span>
+        <span style="color:#9CD9D3;font-family:Permanent Marker;">A</span>
+        <span style="color:#9AA7D2;font-family:Permanent Marker;">M</span>
+        <span style="color:#707070;font-family:Permanent Marker;">Survival</span></a>
+    <a href="">
+        <div class="nav_day" style="text-decoration:none; color:#707070;">
+            <div class="day_name"><span style="color:#707070; font-size: 1.3em;" class="english">D-day</span>
+            [팀플] 일정 이름 2019/06/23 </div>
+            <div class="day_time">( <span class="english">-nn days</span> 0:00:00 )</div>
+        </div></a>
+</header>
 
 {% block contents %}
 {% endblock %}
+
+<footer>
+        <div><span style="color:#707070" class="english">Made by.</span> 이대멋사</div>
+    </footer>

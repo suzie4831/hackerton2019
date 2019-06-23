@@ -1,0 +1,50 @@
+{% extends 'nav.html'%}
+{% block contents %}
+
+<style>
+    *{margin:0px;padding:0px;}
+
+    .container{
+        border:#9AA7D2 solid 3px;
+        margin:auto;
+        width: 60%;
+        text-align:center;
+        color:#7983A6;
+    }
+
+    .btn{
+        padding: 5px 15px;
+        background-color:#9AA7D2;
+        color:white;
+    }
+
+    .btn:hover{
+        background-color:white;
+        color: #9aa7d2;
+    }
+
+    @media (max-width: 600px){
+        .container{
+            margin-top:70px;
+            
+            margin-bottom:20px;
+        }
+    }
+</style>
+
+<div class="container">
+    <br>
+    <form action="{%url 'create' %}">
+        <h4>팀 이름: </h4>
+        <input type="text" name="t_name">
+        <br>
+        <br>
+        <h4>과목명: </h4>
+        <input type="text" name="t_class">
+        <br>
+        <br>
+        <button class="btn btn-dark"  type="submit" value="제출하기">팀플 만들기</button>
+    </form>
+    <br>
+</div>
+{% endblock %}

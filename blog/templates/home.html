@@ -1,119 +1,55 @@
 <!--홈페이지!-->
-
+{% extends 'nav.html'%}
+{% load staticfiles %}
+{% block contents %}
 <body>
-    <header>
-
-<!--css-->
-        <style>
-            *{margin:0;padding:0;}
-            .contents{
-                margin:auto;
-                width: 600px;
-                border: gray dotted 2px;
-            }
-        
-        /*프로필*/
-            .profile{
-                border: green solid 1px;
-                display: inline-block;
-                width: 200px;
-                height: 100px;
-                margin: 5px;
-            }
-        
-        /*달력*/
-            .calendar{
-                /*border: blue solid 1px;*/
-                display: inline-block;
-                width: 200px;
-                margin: 5px;
-            }
-            .dues{
-                border: aquamarine solid 3px;
-                display: inline-block;
-                width: 200px;
-                height: 41px;
-                position:relative;
-            }
-            .due_date{
-                color:white;
-                background-color: aquamarine;
-                position:absolute;
-                padding: 10px; margin:0px;
-                font-size: 1em; 
-            }
-            .due_ex{
-                positon: absolute;
-                height: 50px;
-                width: 100px;
-                top:0; 
-                margin-left:65px;
-                font-size: 0.8em;
-                padding: auto;
-            }
-            .calendar button{
-                border: aquamarine solid 3px;
-                background-color: white;
-                width: 206px;
-                margin-top: 5px;
-                padding: 7px;
-            }
-            .calendar button:hover{
-                background-color:aquamarine;
-                color: white;
-            }
-
-        /*팀플*/
-            .team{
-                border: purple solid 1px;
-                display: inline-block;
-                width: 300px;
-                maring: 5px
-            }
-        </style>
-<!--css 끝-->
-
-        {% extends 'nav.html'%}
-    </header>
-    {% block contents %}
-
  <div class="contents">
 
+<div class="left">
 <!--내 계정 링크-->
     <div class="profile">
-    프로필
+        <a href="./profile.html" style="color:#9DA674;">
+            <img src="{% static 'avatar_head.png' %}" class="head" alt="My Avatar">
+            <div class="profile_ex">
+                <p>계정주</p>
+                <p><span class="english">Lv. 3</span> 조사자</p>
+            </div>
+        </a>
     </div>
 <!--내 계정 링크 끝-->
-
-<!--팀플 리스트-->
-    <div class="team">
-        {% for team in teams.all %}
-        <div>  
-            <h1>{{team.t_name}}</h1>
-            <p>{{team.t_class}}</p>
-        </div>
-        <br>
-        {% endfor %}
-    </div>
-<!--팀플 리스트 끝-->
 
 <!--달력-->
     <div class="calendar">
         <div class="dues">
-            <div class="due_date">06/23</div>
-            <div class="due_ex">
-                <p>[팀플 이름]</p>
-                <p>일정 설명</p>
-            </div>
+            <a href="" style="text-decoration: none;color:#77A6A1;">
+                <div class="due_date">06/23</div>
+                <div class="due_ex">
+                    <p><b>[팀플 이름]</b></p>
+                    <p>일정 설명</p>
+                </div>
+            </a>
         </div>
-        <button type="button" value="달력">달력 확인하기</button>
+        <button type="button" value="달력" class="calendar_link"><b>달력 확인하기</b></button>
     </div>
 <!--달력 끝-->
+</div>
+
+<div class="right">
+    <!--팀플 리스트-->
+    <div class="team">
+        <a href="{%url 'new' %}"><button type="button" value="팀플" class="team_new"><b>+ 새로운 팀플 만들기</b></button></a>
+            {% for team in teams.all %}
+            <a href="{% url 'team' team.pk %}" style="text-decoration:none;">
+                <button type="button" value="팀플" class="team_list">  
+                    <span style="font-size:1.5em;"><b>[{{team.t_name}}]</b></span> <span style="font-size:1.1em;">{{team.t_class}}</span>
+                </button>
+            </a>
+            {% endfor %}
+        </div>
+    <!--팀플 리스트 끝-->
+</div>
 
 </div>
 
 </body>
-<footer>
-    <div>Made by. 이대멋사 Survivors 팀</div>
-</footer>
 {% endblock %}

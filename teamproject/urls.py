@@ -21,9 +21,12 @@ import blog.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.login, name="login"),
-    path('blog/home',blog.views.home, name="home"),
-    path('blog/profile',blog.views.profile, name="profile"),
-    path('blog/team', blog.views.team, name="team"),
-    path('blog/timetable', blog.views.timetable, name="timetable"),
-    path('blog/timetable_edit', blog.views.timetable_edit, name="timetable_edit"),
+    path('home',blog.views.home, name="home"),
+    path('profile',blog.views.profile, name="profile"),
+    path('team/<int:team_id>', blog.views.team, name="team"),
+    path('timetable', blog.views.timetable, name="timetable"),
+    path('timetable_edit', blog.views.timetable_edit, name="timetable_edit"),
+    path('team/new/',blog.views.new, name="new"),
+    path('team/create/',blog.views.create,name="create"),
+    path('<int:team_id>/dday/new', blog.views.dday_new, name="dday_new"),
 ]

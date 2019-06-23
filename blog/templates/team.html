@@ -1,0 +1,25 @@
+{% extends 'nav.html'%}
+{% load staticfiles %}
+{% block contents %}
+<div class="container">
+    <h1>{{ team.t_name }}</h1>
+    <p>{{ team.t_class }}</p>
+
+    <hr>
+    <a href="{% url 'dday_new' team.pk %}">디데이쓰기</a>
+    
+    {% for dday in team.my_team.all %}
+        <div class="d_day">
+        <li>
+            {{ dday.title }}<small> by <strong>   {{ dday.date }}</strong>,  {{ dday.delta }}</small>
+        </li>
+        </div>
+
+        {% empty %}
+          <p>아직 디데이가 없습니다.</p>
+        {% endfor %}
+
+      <hr>
+      <a href="{% url 'home' %}">돌아가기</a>
+</div>
+{% endblock %}
