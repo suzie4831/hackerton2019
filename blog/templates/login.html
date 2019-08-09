@@ -2,12 +2,71 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        .font{
+            font-family:Permanent Marker;
+            color:#707070;
+        }
+        .title2{
+            margin:auto;
+            width:400px;
+            height:50px;
+            text-align: center;
+            margin-bottom:25px;
+        }
+        .box{
+        padding:10px 20px 20px;
+        margin:auto auto;
+        width:400px;
+        height:220px;
+        border:3px solid #C4CE91;
+        text-align: center;
+        position:relative;
+        bottom:20px;
+        }
+        input{
+            margin-bottom:10px;
+        }
+        h1{
+            margin-bottom:10px;
+        }
+        button{
+            color:white;
+            border:#C4CE91 solid 3px;
+             background-color: #C4CE91;
+            width: 100px;
+            height:50px;
+            padding: 7px;
+            margin-bottom:5px;
+            text-decoration:none;
+            position:relative;
+            bottom:20px;
+        }
+        button:hover{
+            background-color:white;
+            color: #C4CE91;
+        }
+    </style>
 <head>
 <body>
-<div>
-    <h1>Login</h1>
+    <a href="{%url 'loginpage' %}" style="text-decoration:none;">
+    <div class="title2">
+            <span style="color:#707070;font-family:Permanent Marker; font-size:2em;">T</span>
+            <span style="color:#C4CE91;font-family:Permanent Marker; font-size:2em;">E</span>
+            <span style="color:#9CD9D3;font-family:Permanent Marker; font-size:2em;">A</span>
+            <span style="color:#9AA7D2;font-family:Permanent Marker; font-size:2em;">M</span>
+            <span style="color:#707070;font-family:Permanent Marker; font-size:2em;">Survival</span>
+    </div>
+    </a>
+<div class="box">
+    <h1 class="font" style="color:rgb(175, 185, 125);">Login</h1>
 
-    <form method="POST" action="{%url 'login' %}">
+    <form method="POST" action="{%url 'login' %}" class="font">
         {% csrf_token %}
         Username:
         <br>
@@ -18,7 +77,7 @@
         <input name="password" type="password" value="">
         <br>
         <br>
-        <input type="submit" value="login">
+        <button type="submit" value="login">Login</button>
     </form>
 </div>
 </body>
