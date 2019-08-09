@@ -16,11 +16,11 @@ class Myuser(models.Model):
         return self.name
 
 class Team(models.Model):
-    user = models.ForeignKey(Myuser, related_name='my_user', on_delete=models.CASCADE)
+    user = models.ForeignKey(Myuser, related_name='my_user', on_delete=models.CASCADE, default=1)
     t_name = models.CharField(max_length=100, default='')
     t_class = models.CharField(max_length=100)
 
-    def __str__(self):
+    def __str__(self):                                                 
         return self.t_name
 
 
