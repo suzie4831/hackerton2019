@@ -1,10 +1,34 @@
+{% extends 'nav.html'%}
+{% block contents %}
 
-{% block content %}
+<style>
+.container{
+        border:#9CD9D3 solid 3px;
+        margin:auto;
+        width: 60%;
+        text-align:center;
+        color:#77A6A1;
+    }
+    .btn{
+        padding: 5px 15px;
+        background-color: #9CD9D3;
+        color:white;
+        margin-bottom: 10px;
+    }
+
+    .btn:hover{
+        background-color:white;
+        color: #77A6A1;
+    }
+</style>
+
+<div class="container">
 <h1>New D-day</h1>
 <form method="POST" class="post-form">{% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <input type ="submit" class="save btn btn-default">
+    <button type ="submit" class="save btn btn-default">디데이 추가하기</button>
 </form>
+</div>
 {% endblock %}

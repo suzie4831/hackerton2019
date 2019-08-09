@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+    .title1{
+        margin:auto;
+        width:400px;
+        height:50px;
+        text-align: center;
+        padding:0px;
+    }
+    .title2{
+        margin:auto;
+        width:400px;
+        height:50px;
+        text-align: center;
+        margin-bottom:25px;
+    }
+    .login{
+        padding:20px;
+        margin:auto auto;
+        width:450px;
+        height:180px;
+        border:3px solid #B4B4B4;
+        text-align: center;
+    }
+                button{
+                    color:white;
+                    border:#707070 solid 3px;
+                    background-color: #707070;
+                    width: 100px;
+                    height:50px;
+                    padding: 7px;
+                    margin-bottom:5px;
+                    text-decoration:none;
+                }
+                button:hover{
+                    background-color:white;
+                    color: #707070;
+                }
+
+
+</style>
+<head>
+<body>
+
+<div class="title1">
+    <di style="color:#707070;font-family:Permanent Marker;font-size:2em;">Welcom to</div>
+        <div class="title2">
+            <span style="color:#707070;font-family:Permanent Marker; font-size:3em;">T</span>
+            <span style="color:#C4CE91;font-family:Permanent Marker; font-size:3em;">E</span>
+            <span style="color:#9CD9D3;font-family:Permanent Marker; font-size:3em;">A</span>
+            <span style="color:#9AA7D2;font-family:Permanent Marker; font-size:3em;">M</span>
+            <span style="color:#707070;font-family:Permanent Marker; font-size:3em;">Survival</span>
+        </div>
+    </div>
+<div class="login">
+    <a href="{%url 'signup' %}"><button style="button">회원가입</button></a>
+    <a href="{%url 'logout' %}"><button style="button">로그아웃</button></a><br><br>
+    <a href="{% url 'login' %}"><button style="button">로그인</button></a><br>
+</div>
+</body>
+</html>

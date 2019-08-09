@@ -1,7 +1,133 @@
 <!--개인 계정 프로필 페이지-->
-
 {% extends 'nav.html' %}
-
+{% load staticfiles %}
 {% block contents %}
 
+<style>
+    .avatar_block{
+        margin:auto;
+        width: 1000px;
+        height: 180px;
+        border: #C4CE91 solid 3px;
+        color:#9DA674;
+    }
+    .full_avatar{
+        margin: 20px 30px;
+        width: 100px;
+    }
+
+    .stat{
+        text-align:right;
+        font-size:0.9em;
+        margin-bottom:10px;
+        color:#C4CE91;
+    }
+    .stat_percent{
+        background-color:#C4CE91;
+        color:white;
+        width:50px;
+        text-align: left;
+        padding-left:5px;
+    }
+
+    .profile_info{
+        margin:5px auto;
+        width: 1000px;
+        height: 230px;
+        border: #9CD9D3 solid 3px;
+    }
+    .profile_info th{
+        background-color:#9CD9D3;
+        color:white;
+        padding: 10px;
+    }
+    .profile_info td{
+        border-bottom: 1px solid #9CD9D3;
+        padding-left:10px;
+    }
+    .timetable{
+        margin:10px auto;
+        height:40px;
+        width:1000px;
+    }
+    .timetable button{
+        height:40px;
+        width:1015px;
+        border:#9CD9D3 solid 3px;
+        color:white;
+        background-color: #9CD9D3;
+        text-decoration:none;
+                }
+    .timetable button:hover{
+        border:#9CD9D3 solid 3px;
+        background-color:white;
+        color: #77A6A1;
+    }
+</style>
+
+    <div class="avatar_block container">
+        <table>
+            <tr>
+                <th rowspan="3"><img src="{% static 'avatar.png' %}" class="full_avatar" alt="My Avatar"></th>
+                <td>
+                    <h2>{{user.username}}</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3 class="english" style="color:#C4CE91;">Lv. 3</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="stat">
+                        <tr>
+                            <th>자료조사</th>
+                            <td class="stat_percent">00 %</td>
+                        </tr>
+                        <tr>
+                            <th>피피티</th>
+                            <td class="stat_percent">00 %</td>
+                        </tr>
+                        <tr>
+                            <th>발표</th>
+                            <td class="stat_percent">00 %</td>
+                        </tr>
+                        <tr>
+                            <th>기타</th>
+                            <td class="stat_percent">00 %</td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="profile_info">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td>@ewhalikelion</td>
+            </tr>
+            <tr>
+                <th>전공</th>
+                <td>OO 학과</td>
+            </tr>
+            <tr>
+                <th>학번</th>
+                <td>1n 학번</td>
+            </tr>
+            <tr>
+                <th>연락처</th>
+                <td>01012343965 / iwannagohome@gmail.com</td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td>이화여자대학교 멋쟁이사자처럼 7기 소속</td>
+            </tr>
+        </table>
+    </div>
+    <div class="timetable">
+    <button type="button" value="시간표">시간표 확인하기</button>
+    </div>
 {% endblock %}

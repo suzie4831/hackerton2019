@@ -34,7 +34,7 @@
 
 <div class="container">
     <br>
-    <form action="{%url 'create' %}">
+    <form action="{% url 'create' %}" >
         <h4>팀 이름: </h4>
         <input type="text" name="t_name">
         <br>
@@ -47,4 +47,5 @@
     </form>
     <br>
 </div>
+
 {% endblock %}

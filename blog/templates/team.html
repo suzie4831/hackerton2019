@@ -1,25 +1,93 @@
 {% extends 'nav.html'%}
 {% load staticfiles %}
 {% block contents %}
+
+<style>
+  .team_nav{
+    background-color:#9AA7D2;
+    width:1000px;
+    margin:auto;
+    padding:7px;
+  }
+  .team_nav ul{
+    height:30px;
+    width:450px;
+    margin:auto;
+  }
+  .team_nav li{
+    display:inline-block;
+    padding:5px 10px;
+    color: white;
+    text-decoration:none;
+  }
+  .team_table{
+    border:#9AA7D2 solid 3px;
+    width: 1000px;
+    margin:10px auto;
+    padding: 10px 15px;
+  }
+  .team_table th{
+    background-color:#9AA7D2;
+    width:75px;
+    color:white;
+    padding:10px 0px;
+  }
+  .team_table td{
+    padding:10px;
+    border-bottom: #9AA7D2 1px solid;
+  }
+  .add_day{
+    color:white;
+    border:#9AA7D2 solid 3px;
+    background-color: #9AA7D2;
+    padding: 5px;
+    margin-top:10px;
+  }
+  .add_day:hover{
+    background-color:white;
+    color: #9AA7D2;
+
+  @media (max-width: 600px){
+    .team_nav ul{
+      border-top:2px solid #B4B4B4;
+    }
+  }
+</style>
+
+<div class="team_nav">
+    <ul>
+      <a href="#팀정보"><li>팀정보</li></a>
+      <a href="#디데이"><li>디데이</li></a>
+      <a href="http://docs.google.com"><li>문서공유</li></a>
+      <a href="http://cyber.ewha.ac.kr" ><li>사이버캠퍼스</li></a>
+      <a href="http://eureka.ewha.ac.kr/eureka/my/main.do?LANG_CD=KO"><li>공간예약</li></a>
+    </ul>
+  </div>
+
 <div class="container">
-    <h1>{{ team.t_name }}</h1>
-    <p>{{ team.t_class }}</p>
-
-    <hr>
-    <a href="{% url 'dday_new' team.pk %}">디데이쓰기</a>
-    
-    {% for dday in team.my_team.all %}
-        <div class="d_day">
-        <li>
-            {{ dday.title }}<small> by <strong>   {{ dday.date }}</strong>,  {{ dday.delta }}</small>
-        </li>
-        </div>
-
-        {% empty %}
-          <p>아직 디데이가 없습니다.</p>
-        {% endfor %}
-
-      <hr>
-      <a href="{% url 'home' %}">돌아가기</a>
+  <table class="team_table">
+    <tr>
+      <th id="팀정보">팀정보</th>
+      <td>
+        <h1>{{ team.t_name }}</h1>
+        <p>{{ team.t_class }}</p>
+      </td>
+    </tr>
+    <tr>
+      <th id="디데이">디데이</th>
+      <td>
+        {% for dday in team.my_team.all %}
+              <div class="d_day">
+              <li>
+                  {{ dday.title }}<small> by <strong>   {{ dday.date }}</strong>,  {{ dday.delta }}</small>
+              </li>
+              </div>
+              {% empty %}
+                <p>아직 디데이가 없습니다.</p>
+              {% endfor %}
+        <a href="{% url 'dday_new' team.pk %}"><button type="button" value="디데이" class="add_day">디데이 추가하기</button></a>
+      </td>
+    </tr>
+  </table>
 </div>
 {% endblock %}

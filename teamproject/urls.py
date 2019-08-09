@@ -20,7 +20,8 @@ import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog.views.login, name="login"),
+    path('', blog.views.loginpage, name="login"),
+    path('accounts/',include('allauth.urls')),
     path('home',blog.views.home, name="home"),
     path('profile',blog.views.profile, name="profile"),
     path('team/<int:team_id>', blog.views.team, name="team"),
@@ -29,4 +30,9 @@ urlpatterns = [
     path('team/new/',blog.views.new, name="new"),
     path('team/create/',blog.views.create,name="create"),
     path('<int:team_id>/dday/new', blog.views.dday_new, name="dday_new"),
+    path('signup/', blog.views.signup, name='signup'),
+    path('login/', blog.views.login, name='login'),
+    path('logout/', blog.views.logout, name='logout'),
+    path('table/', blog.views.table, name='table'),
+
 ]

@@ -40,11 +40,30 @@
             /*푸터*/
                 footer{
                     margin: 10px auto;
+                    height: 70px;
+                    width: 1000px;
+                }
+                .made_by{
                     height: 30px;
                     width: 1000px;
                     border: #B4B4B4 solid 3px;
                     text-align: center;
                     padding:5px;
+                    margin-bottom:10px;
+                }
+                .top_button{
+                    height:40px;
+                    width:1015px;
+                    border:#B4B4B4 solid 3px;
+                    color:white;
+                    background-color: #B4B4B4;
+                    text-decoration:none;
+                    margin-bottom:5px;
+                }
+                .top_button:hover{
+                    border:#B4B4B4 solid 3px;
+                    background-color:white;
+                    color: #707070;
                 }
 
 /*홈페이지*/
@@ -56,15 +75,14 @@
                 .left{
                     display:inline-block;
                     position: relative;
-                    top:0px;
                     width:270px;
-                    height:100%;
+                    height:60%;
                 }
                 .right{
                     display: inline-block;
                     position: relative;
                     width: 700px;
-                    height:100%;
+                    height:60%;
                 }
             
             /*프로필*/
@@ -93,10 +111,10 @@
                 }
                 .dues{
                     border: #9CD9D3 solid 3px;
-                    display: inline-block;
                     width: 250px;
                     height: 41px;
                     position:relative;
+                    margin-bottom:5px;
                 }
                 .due_date{
                     color:white;
@@ -114,13 +132,18 @@
                     font-size: 0.8em;
                     padding: auto;
                 }
+
+                .calendar_final{
+                    position:relative;
+                    top:10px;
+                }
                 .calendar_link{
                     border: #9CD9D3 solid 3px;
                     color:#77A6A1;
                     background-color: white;
-                    width: 256px;
+                    width: 300px;
                     margin-top: 5px;
-                    padding: 7px;
+                    padding: 7px 45px;
                 }
                 .calendar_link:hover{
                     background-color:#9CD9D3;
@@ -197,15 +220,6 @@
                 }
                 .day_time{
                     display:block;
-                }
-
-            /*푸터*/
-                footer{
-                    margin: 10px;
-                    height: 30px;
-                    width: 95%;
-                    border: #B4B4B4 solid 3px;
-                    margin:5px;
                 }
 
 /*홈페이지*/
@@ -320,12 +334,13 @@
                 }
         }
         </style>
+        <title>팀서바이벌</title>
+        <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon.ico">
 </head>
 
 <!--공통 헤더-->
-<title>팀플 서바이벌</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Permanent+Marker&display=swap" rel="stylesheet">
-<header>
+<header id="top">
     <a href="{% url 'home' %}" class="nav_home">
         <span style="color:#707070;font-family:Permanent Marker;">T</span>
         <span style="color:#C4CE91;font-family:Permanent Marker;">E</span>
@@ -344,5 +359,6 @@
 {% endblock %}
 
 <footer>
-        <div><span style="color:#707070" class="english">Made by.</span> 이대멋사</div>
-    </footer>
+    <a href="#top"><button type="button" value="팀플" class="top_button">맨 위로 올라가기</button></a>
+    <div class="made_by"><span style="color:#707070" class="english">Made by.</span> 이대멋사</div>
+</footer>

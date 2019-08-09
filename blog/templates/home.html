@@ -2,35 +2,50 @@
 {% extends 'nav.html'%}
 {% load staticfiles %}
 {% block contents %}
+<head>
+</head>
 <body>
  <div class="contents">
 
 <div class="left">
+
 <!--내 계정 링크-->
     <div class="profile">
-        <a href="./profile.html" style="color:#9DA674;">
+        <a href="{% url 'profile' %}" style="color:#9DA674;">
             <img src="{% static 'avatar_head.png' %}" class="head" alt="My Avatar">
             <div class="profile_ex">
-                <p>계정주</p>
+                <p>{{user.username}}</p>
                 <p><span class="english">Lv. 3</span> 조사자</p>
             </div>
         </a>
     </div>
 <!--내 계정 링크 끝-->
 
+<!--시간표-->
+    <div class="">
+        <a href="{%url 'table' %}" style="text-decoration: none;"><button type ="button" value="달력" class="calendar_link" ><b>내 시간표 확인하기</b></button></a>
+    </div>
+<!--시간표 끝-->
+
 <!--달력-->
     <div class="calendar">
+    {% for dday in ddays.all %}
         <div class="dues">
-            <a href="" style="text-decoration: none;color:#77A6A1;">
-                <div class="due_date">06/23</div>
-                <div class="due_ex">
-                    <p><b>[팀플 이름]</b></p>
-                    <p>일정 설명</p>
-                </div>
-            </a>
+                    <a href="#" style="text-decoration: none;color:#77A6A1;">
+                        <div class="due_date">{{dday.date.month}}/{{dday.date.day}}</div>
+                            <div class="due_ex">
+                                <p><b>[{{ dday.team }}]</b></p>
+                                <p>{{ dday.title }}</p>
+                            </div>
+                    </a>
         </div>
-        <button type="button" value="달력" class="calendar_link"><b>달력 확인하기</b></button>
+
+    {% endfor %}
+    <div class="calendar_final">
+         <a href="{%url 'timetable' %}" style="text-decoration: none;"><button type ="button" value="달력" class="calendar_link" ><b>달력 확인하기</b></button></a>
     </div>
+    </div>
+    
 <!--달력 끝-->
 </div>
 
